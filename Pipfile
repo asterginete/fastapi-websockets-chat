@@ -1,16 +1,35 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
-
-[packages]
-fastapi = {extras = ["all"], version = "*"}
-uvicorn = "*"
-websockets = "*"
-passlib = "*"
-pyjwt = "*"
 
 [dev-packages]
+# Development packages go here, for example:
+pytest = "*"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+sqlalchemy = "1.4.*"
+pillow = "8.3.*"
+emoji = "1.2.*"
+celery = "5.1.*"
+elasticsearch = "7.14.*"
+elasticsearch-dsl = "7.4.*"
+pydub = "0.25.*"
+rasa = "2.8.*"
+chatterbot = "1.0.5"
+pynacl = "1.4.*"
+python-jose = "3.3.*"
+pyotp = "2.4.*"
+passlib = {extras = ["bcrypt"], version = "*"}
+pyjwt = "*"
+databases = "*"
+alembic = "*"
+httpx = "*"
 
 [requires]
-python_version = "3.11"
+python_version = "3.9"  # or your desired Python version
+
+[scripts]
+start = "uvicorn app.main:app --reload"
